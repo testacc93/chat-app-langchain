@@ -3,6 +3,7 @@ from channels.exceptions import StopConsumer
 from asgiref.sync import async_to_sync
 from langchain.llms import OpenAI
 import json
+from decouple import config
 class MySyncConsumer(SyncConsumer):
     def websocket_connect(self, event):
         async_to_sync(self.channel_layer.group_add)('programmers',self.channel_name)
@@ -21,7 +22,8 @@ class MySyncConsumer(SyncConsumer):
 
     def chat_message(self, event):
         import os
-        os.environ['OPENAI_API_KEY'] = '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'
+        os.environ['OPENAI_API_KEY'] = config('OPENAI_API_KEY')
+        
         model = OpenAI(temperature=0.6)
         question = json.loads(event['message'])['msg']
         res = model(question)
