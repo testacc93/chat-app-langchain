@@ -38,6 +38,7 @@ pycparser==2.21
 pydantic==2.3.0
 pydantic-core==2.6.3
 pyOpenSSL==23.2.0
+python-decouple==3.8
 PyYAML==6.0.1
 redis==5.0.0
 requests==2.31.0
