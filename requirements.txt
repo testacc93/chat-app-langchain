@@ -17,6 +17,7 @@ cryptography==41.0.3
 daphne==3.0.2
 dataclasses-json==0.5.14
 Django==4.2.5
+django-cors-headers==4.2.0
 frozenlist==1.4.0
 greenlet==2.0.2
 hyperlink==21.0.0
